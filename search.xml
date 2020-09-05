@@ -16,7 +16,7 @@
 <p>初始化文件夹，接着输入<br>安装必备的组件。这样本地的网站配置也弄好啦，输入</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
 <p>生成静态网页，然后输入hexo s打开本地服务器，然后浏览器打开<a href="http://localhost:4000/">http://localhost:4000/</a> ，可以看到预览了。<br></p>
-<h3 id="连接Github与本地"><a href="#连接Github与本地" class="headerlink" title="连接Github与本地"></a><strong>连接Github与本地</strong></h3><p>首先右键打开git bash，然后输入下面命令：</p>
+<h3 id="连接Github与本地"><a href="#连接Github与本地" class="headerlink" title="连接Github与本地"></a><strong>连接Github与本地</strong></h3><p>&emsp;&emsp;首先右键打开git bash，然后输入下面命令：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;godweiyang&quot;git config --global user.email </span><br></pre></td></tr></table></figure>
 <p>用户名和邮箱根据你注册github的信息自行修改。然后生成密钥SSH key：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C youremail</span><br></pre></td></tr></table></figure>
@@ -28,9 +28,10 @@
 <p>修改最后一行的配置：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https:&#x2F;&#x2F;github.com&#x2F;godweiyang&#x2F;godweiyang.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 <p>repository修改为你自己的github项目地址。</p>
-<h3 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a><strong>绑定域名</strong></h3><p>现在默认的域名还是xxx.github.io，首先你得购买一个域名，阿里云就能买。在你的域名控制台添加两条解析记录：A和CNAME，前者记录值为网站的ping，后者记录值你的GitHub仓库名。这时候你的项目根目录应该会出现一个名为CNAME的文件了。如果没有的话，打开你本地博客/source目录，新建CNAME文件，注意没有后缀。然后在里面写上你的域名，保存。最后运行hexo g、hexo d上传到github。</p>
+<h3 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a><strong>绑定域名</strong></h3><p>&emsp;&emsp;现在默认的域名还是xxx.github.io，首先你得购买一个域名，阿里云就能买。在你的域名控制台添加两条解析记录：A和CNAME，前者记录值为网站的ping，后者记录值你的GitHub仓库名。这时候你的项目根目录应该会出现一个名为CNAME的文件了。如果没有的话，打开你本地博客/source目录，新建CNAME文件，注意没有后缀。然后在里面写上你的域名，保存。最后运行hexo g、hexo d上传到github。</p>
 <h2 id="提前排雷"><a href="#提前排雷" class="headerlink" title="提前排雷"></a><strong>提前排雷</strong></h2><p>·新建的GitHub仓库名必须要遵守格式：账户名.github.io，不然接下来会有很多麻烦。<br><br>·输入自己的项目名字，后面一定要加.github.io后缀，README初始化也要勾上。<br><br>·安装Hexo时会有几个报错，一般跟系统有关，问题不大，无视它就行。<br>·在配置hexo主题时报错YAMLException: can not read a block mapping entry; a multiline key may not be an implicit key。报错信息提示hexo的yml配置文件，冒号后面少了空格。解决方案是到提示行将对应的空格补上即可，注意是半角。<br>·修改博客根目录中_config.yml文件的配置项post_asset_folder为true，并在你的文章.md的文件夹中建一个同名文件夹存放图片，引用方法为markdown语法。<br>·遇到问题Error: “git 不是内部或外部命令，也不是可运行的程序”。解决方法是找到git安装路径中bin的位置，将其地址复制到path后（用’ ; ‘分隔不同路径）。</p>
-<h2 id="心得感受"><a href="#心得感受" class="headerlink" title="心得感受"></a><strong>心得感受</strong></h2>]]></content>
+<h2 id="心得感受"><a href="#心得感受" class="headerlink" title="心得感受"></a><strong>心得感受</strong></h2><p>&emsp;&emsp;第一感觉是独立建站并没有想象中那么难，起码不算复杂。我认为这得益于成熟的hexo相对成熟的框架和社区，有问题能找到答案。第二感觉是这种抄近路式的建站的后续工作还是挺难的。毕竟你想要的很多功能和插件需要自己配置，这期间就会遇到奇奇怪怪的问题，网上找不到答案，用着很难受。现在这个网站还有很多功能有问题，有些功能无法实现，这就是自身的水平问题，而且目前看也不是专业相关，慢慢来吧。</p>
+]]></content>
       <categories>
         <category>Technology</category>
       </categories>
