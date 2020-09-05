@@ -3,7 +3,7 @@
   <entry>
     <title>Hexo+GitHub建站心得</title>
     <url>/2020/09/04/Hexo+GitHub%E5%BB%BA%E7%AB%99%E5%BF%83%E5%BE%97/</url>
-    <content><![CDATA[<h2 id="大体流程"><a href="#大体流程" class="headerlink" title="大体流程"></a><strong>大体流程</strong></h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a><strong>准备工作</strong></h3><p>&emsp;&emsp;准备 node 和 git 环境，首先，安装 NodeJS，因为 Hexo 是基于 Node.js 驱动的一款博客框架，相比起前面提到过的 Jekyll 框架更快更简洁，因为天朝网络被墙的原因尝试过安装 Jekyll 失败而放弃了。然后，安装 git，一个分布式版本控制系统，用于项目的版本控制管理。两个工具不同的平台安装方法有所不一样，可自行了解按步骤安装，这里不详述了。安装成功后打开git bash（Windowns）或者终端（Mac），下方中将统一称为命令行。在命令行中输入相应命令验证是否成功，如果成功会有相应的版本号。<br></p>
+    <content><![CDATA[<h2 id="大体流程"><a href="#大体流程" class="headerlink" title="大体流程"></a><strong>大体流程</strong></h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a><strong>准备工作</strong></h3><p>&emsp;&emsp;准备 node 和 git 环境，首先，安装 NodeJS，因为 Hexo 是基于 Node.js 驱动的一款博客框架，相比起前面提到过的 Jekyll 框架更快更简洁。<a id="more"></a>因为天朝网络被墙的原因尝试过安装 Jekyll 失败而放弃了。然后，安装 git，一个分布式版本控制系统，用于项目的版本控制管理。两个工具不同的平台安装方法有所不一样，可自行了解按步骤安装，这里不详述了。安装成功后打开git bash（Windowns）或者终端（Mac），下方中将统一称为命令行。在命令行中输入相应命令验证是否成功，如果成功会有相应的版本号。<br></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git version</span><br><span class="line">node -v</span><br><span class="line">npm -v </span><br></pre></td></tr></table></figure>
 
 <p>&emsp;&emsp;打开github，点击New repository，创建一个新仓库，仓库名必须要遵守格式：账户名.github.io，不然接下来会有很多麻烦。注意，Github 仅能使用一个同名仓库的代码托管一个静态站点，并且需要勾选Initialize this repository with a README。<br>在建好的仓库右侧有个settings按钮，点击它，向下拉到GitHub Pages，你会看到有个网址，访问它，你将会发现该项目已经被部署到网络上，能够通过外网来访问它，当然里面还很空什么东西都没有。 该地址就是你的博客默认地址，你也可以购买域名，将其换成你喜欢的地址。</p>
@@ -24,8 +24,13 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cat ~&#x2F;.ssh&#x2F;id_rsa.pub</span><br></pre></td></tr></table></figure>
 <p>将输出的内容复制到框中，点击确定保存。输入</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<p>，如果如下图所示，出现你的用户名，那就成功了。</p>
-]]></content>
+<p>，如果如下图所示，出现你的用户名，那就成功了。<br>打开博客根目录下的_config.yml文件，这是博客的配置文件，在这里你可以修改与博客相关的各种信息。</p>
+<p>修改最后一行的配置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https:&#x2F;&#x2F;github.com&#x2F;godweiyang&#x2F;godweiyang.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p>repository修改为你自己的github项目地址。</p>
+<h3 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a><strong>绑定域名</strong></h3><p>现在默认的域名还是xxx.github.io，首先你得购买一个域名，阿里云就能买。在你的域名控制台添加两条解析记录：A和CNAME，前者记录值为网站的ping，后者记录值你的GitHub仓库名。这时候你的项目根目录应该会出现一个名为CNAME的文件了。如果没有的话，打开你本地博客/source目录，新建CNAME文件，注意没有后缀。然后在里面写上你的域名，保存。最后运行hexo g、hexo d上传到github。</p>
+<h2 id="提前排雷"><a href="#提前排雷" class="headerlink" title="提前排雷"></a><strong>提前排雷</strong></h2><p>·新建的GitHub仓库名必须要遵守格式：账户名.github.io，不然接下来会有很多麻烦。<br><br>·输入自己的项目名字，后面一定要加.github.io后缀，README初始化也要勾上。<br><br>·安装Hexo时会有几个报错，一般跟系统有关，问题不大，无视它就行。<br>·在配置hexo主题时报错YAMLException: can not read a block mapping entry; a multiline key may not be an implicit key。报错信息提示hexo的yml配置文件，冒号后面少了空格。解决方案是到提示行将对应的空格补上即可，注意是半角。<br>·修改博客根目录中_config.yml文件的配置项post_asset_folder为true，并在你的文章.md的文件夹中建一个同名文件夹存放图片，引用方法为markdown语法。<br>·遇到问题Error: “git 不是内部或外部命令，也不是可运行的程序”。解决方法是找到git安装路径中bin的位置，将其地址复制到path后（用’ ; ‘分隔不同路径）。</p>
+<h2 id="心得感受"><a href="#心得感受" class="headerlink" title="心得感受"></a><strong>心得感受</strong></h2>]]></content>
       <categories>
         <category>Technology</category>
       </categories>
@@ -36,7 +41,9 @@
   <entry>
     <title>Hello World</title>
     <url>/2020/09/03/hello-world/</url>
-    <content><![CDATA[<p>其实我很早以前就想建一个独立博客，分享我的所见、所闻、所听、所感。但是由于种种原因，直到现在才算是搭了一个乞丐版个人网站。《庄子》云：人生在世，恍若白驹过隙，忽然而已。我的初衷就是把我看到的和听到的记录下来，没有功利性的目的，单纯觉得这是一件很有意义的事情。当然，不选豆瓣简书之类的平台，选择自己搭建，也单纯是觉得这样很酷。<br><br><br>&emsp;&emsp; 这是Geoffrey的博客，我将在这里分享我的学习与生活的经历和感想，也会写写随笔。主要靠兴趣，不定期更新。<br><br><br><img src="/2020/09/03/hello-world/picture.jpg" alt="initiate"></p>
+    <content><![CDATA[<p>其实我很早以前就想建一个独立博客，分享我的所见、所闻、所听、所感。但是由于种种原因，直到现在才算是搭了一个乞丐版个人网站。</p>
+<a id="more"></a>
+<p>《庄子》云：人生在世，恍若白驹过隙，忽然而已。我的初衷就是把我看到的和听到的记录下来，没有功利性的目的，单纯觉得这是一件很有意义的事情。当然，不选豆瓣简书之类的平台，选择自己搭建，也单纯是觉得这样很酷。<br><br><br>&emsp;&emsp; 这是Geoffrey的博客，我将在这里分享我的学习与生活的经历和感想，也会写写随笔。主要靠兴趣，不定期更新。<br><br><br><img src="/2020/09/03/hello-world/picture.jpg" alt="initiate"></p>
 ]]></content>
       <categories>
         <category>Experience</category>
