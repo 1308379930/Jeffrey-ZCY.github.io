@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Hexo+GitHub建站心得</title>
-    <url>/2020/09/04/Hexo+GitHub%E5%BB%BA%E7%AB%99%E5%BF%83%E5%BE%97/</url>
+    <url>/2020/09/14/Hexo+GitHub%E5%BB%BA%E7%AB%99%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<h2 id="大体流程"><a href="#大体流程" class="headerlink" title="大体流程"></a><strong>大体流程</strong></h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a><strong>准备工作</strong></h3><p>&emsp;&emsp;准备 node 和 git 环境，首先，安装 NodeJS，因为 Hexo 是基于 Node.js 驱动的一款博客框架，相比起前面提到过的 Jekyll 框架更快更简洁。<a id="more"></a>因为天朝网络被墙的原因尝试过安装 Jekyll 失败而放弃了。然后，安装 git，一个分布式版本控制系统，用于项目的版本控制管理。两个工具不同的平台安装方法有所不一样，可自行了解按步骤安装，这里不详述了。安装成功后打开git bash（Windowns）或者终端（Mac），下方中将统一称为命令行。在命令行中输入相应命令验证是否成功，如果成功会有相应的版本号。<br></p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git version</span><br><span class="line">node -v</span><br><span class="line">npm -v </span><br></pre></td></tr></table></figure>
 

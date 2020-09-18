@@ -37,10 +37,10 @@
   
   <entry>
     <title>Hexo+GitHub建站心得</title>
-    <link href="http://example.com/2020/09/04/Hexo+GitHub%E5%BB%BA%E7%AB%99%E5%BF%83%E5%BE%97/"/>
-    <id>http://example.com/2020/09/04/Hexo+GitHub%E5%BB%BA%E7%AB%99%E5%BF%83%E5%BE%97/</id>
-    <published>2020-09-04T12:21:31.394Z</published>
-    <updated>2020-09-05T07:24:29.949Z</updated>
+    <link href="http://example.com/2020/09/14/Hexo+GitHub%E5%BB%BA%E7%AB%99%E5%BF%83%E5%BE%97/"/>
+    <id>http://example.com/2020/09/14/Hexo+GitHub%E5%BB%BA%E7%AB%99%E5%BF%83%E5%BE%97/</id>
+    <published>2020-09-13T16:07:56.000Z</published>
+    <updated>2020-09-17T16:11:48.135Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;大体流程&quot;&gt;&lt;a href=&quot;#大体流程&quot; class=&quot;headerlink&quot; title=&quot;大体流程&quot;&gt;&lt;/a&gt;&lt;strong&gt;大体流程&lt;/strong&gt;&lt;/h2&gt;&lt;h3 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;&lt;strong&gt;准备工作&lt;/strong&gt;&lt;/h3&gt;&lt;p&gt;&amp;emsp;&amp;emsp;准备 node 和 git 环境，首先，安装 NodeJS，因为 Hexo 是基于 Node.js 驱动的一款博客框架，相比起前面提到过的 Jekyll 框架更快更简洁。&lt;/p&gt;</summary>
