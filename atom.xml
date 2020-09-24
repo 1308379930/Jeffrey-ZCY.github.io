@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-09-24T16:22:20.348Z</updated>
+  <updated>2020-09-24T16:24:47.291Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,14 +21,14 @@
     <link href="http://example.com/2020/09/18/meaning-of-life/"/>
     <id>http://example.com/2020/09/18/meaning-of-life/</id>
     <published>2020-09-18T04:50:42.000Z</published>
-    <updated>2020-09-24T16:22:20.348Z</updated>
+    <updated>2020-09-24T16:24:47.291Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;1&quot;&gt;&lt;a href=&quot;#1&quot; class=&quot;headerlink&quot; title=&quot;1&quot;&gt;&lt;/a&gt;&lt;strong&gt;1&lt;/strong&gt;&lt;/h2&gt;&lt;p&gt;&amp;emsp;&amp;emsp;丹麦画家金•弗珀兹•艾克松有一本作品，叫做《爷爷变成了幽灵》，在全球热卖。这本绘本讲了一个故事：小男孩艾斯本的爷爷心脏病发去世。他伤心至极，他无法理解“死”这件事。妈妈告诉他：“爷爷去天堂了，爷爷变成了天使。”艾斯本想象不出天堂的样子。爸爸说：“爷爷会变成泥土，然后就慢慢地消失了。”艾斯本想象不出爷爷变成泥土的样子。&lt;/p&gt;</summary>
     
     
     
-    <category term="philosophy" scheme="http://example.com/categories/philosophy/"/>
+    <category term="Philosophy" scheme="http://example.com/categories/Philosophy/"/>
     
     
     <category term="意义" scheme="http://example.com/tags/%E6%84%8F%E4%B9%89/"/>
